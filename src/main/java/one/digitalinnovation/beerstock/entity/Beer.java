@@ -3,6 +3,7 @@ package one.digitalinnovation.beerstock.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import one.digitalinnovation.beerstock.enums.BeerType;
 
 import javax.persistence.*;
 
