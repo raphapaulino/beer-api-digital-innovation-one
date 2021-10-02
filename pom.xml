@@ -13,12 +13,14 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>beerstock</name>
 	<description>Beer stock project for testing live coding</description>
+
 	<properties>
-		<java.version>11</java.version>
+		<java.version>15</java.version>
 		<org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
 		<springfox-swagger2.version>3.0.0</springfox-swagger2.version>
 		<springfox-swagger-ui.version>3.0.0</springfox-swagger-ui.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -87,19 +89,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
+				<!-- <version>3.8.1</version> -->
 				<configuration>
 					<source>${java.version}</source> <!-- depending on your project -->
 					<target>${java.version}</target> <!-- depending on your project -->

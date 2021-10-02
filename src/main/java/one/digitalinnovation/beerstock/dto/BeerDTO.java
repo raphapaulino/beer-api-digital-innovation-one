@@ -38,5 +38,5 @@ public class BeerDTO {
 
     @Enumerated(EnumType.STRING)
     @NotNull
-    private BeerType beerType;
+    private BeerType type;
 }

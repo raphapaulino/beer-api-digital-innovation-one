@@ -1,4 +1,4 @@
-package one.digitalinnovation.mapper;
+package one.digitalinnovation.beerstock.mapper;
 
 import one.digitalinnovation.beerstock.dto.BeerDTO;
 import one.digitalinnovation.beerstock.entity.Beer;
