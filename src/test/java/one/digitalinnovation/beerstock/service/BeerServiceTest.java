@@ -102,8 +102,8 @@ public class BeerServiceTest {
     @Test
     void whenListBeerIsCalledThenReturnAListOfBeers() {
         // given
-        BeerDTO expectedBeerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
-        Beer expectedFoundBeer = beerMapper.toModel(expectedBeerDTO);
+        BeerDTO expectedFoundBeerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
+        Beer expectedFoundBeer = beerMapper.toModel(expectedFoundBeerDTO);
 
         // when
         when(beerRepository.findAll()).thenReturn(Collections.singletonList(expectedFoundBeer));
@@ -112,6 +112,17 @@ public class BeerServiceTest {
         List<BeerDTO> foundListBeersDTO = beerService.listAll();
 
         assertThat(foundListBeersDTO, is(not(empty())));
-        assertThat(foundListBeersDTO.get(0), is(equalTo(expectedBeerDTO)));
+        assertThat(foundListBeersDTO.get(0), is(equalTo(expectedFoundBeerDTO)));
+    }
+
+    @Test
+    void whenListBeerIsCalledThenReturnAnEmptyListOfBeers() {
+        // when
+        when(beerRepository.findAll()).thenReturn(Collections.EMPTY_LIST);
+
+        // then
+        List<BeerDTO> foundListBeersDTO = beerService.listAll();
+
+        assertThat(foundListBeersDTO, is(empty()));
     }
 }
