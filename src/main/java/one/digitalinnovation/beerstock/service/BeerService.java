@@ -39,6 +39,11 @@ public class BeerService {
                 .map(beerMapper::toDTO).collect(Collectors.toList());
     }
 
+    public void deleteById(Long id) throws BeerNotFoundException {
+        verifyIfExists(id);
+        beerRepository.deleteById(id);
+    }
+
     private void verifyIfIsAlreadyRegistered(String name) throws BeerAlreadyRegisteredException {
         Optional<Beer> optSavedBeer = beerRepository.findByName(name);
         if (optSavedBeer.isPresent()) {
