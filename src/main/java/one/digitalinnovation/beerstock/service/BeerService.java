@@ -28,6 +28,12 @@ public class BeerService {
         return beerMapper.toDTO(savedBeer);
     }
 
+    public BeerDTO findByName(String name) throws BeerNotFoundException {
+        Beer foundBeer = beerRepository.findByName(name)
+                .orElseThrow(() -> new BeerNotFoundException(name));
+        return beerMapper.toDTO(foundBeer);
+    }
+
     public List<BeerDTO> listAll() {
         return beerRepository.findAll().stream()
                 .map(beerMapper::toDTO).collect(Collectors.toList());
