@@ -27,6 +27,9 @@ public class Beer {
     private int max;
 
     @Column(nullable = false)
+    private int min;
+
+    @Column(nullable = false)
     private int quantity;
 
     @Enumerated(EnumType.STRING)
